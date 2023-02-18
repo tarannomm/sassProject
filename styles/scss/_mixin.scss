@@ -1,0 +1,50 @@
+@mixin firststyes{
+    margin :0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+@mixin textStyles($color,$fontSize,$weight){
+color: $color;
+font-size: $fontSize;
+font-weight: $weight;
+}
+@mixin imgStyles($width,$height,$radius){
+    width:$width;
+    height:$height;
+    border-radius: $radius;
+}
+@mixin media($size){
+    @if($size == M){
+     @media (max-width:768px) {
+        @content;
+        
+     }
+    }
+    @else if($size == L){
+        @media (min-width:768px ) and (max-width:1200px) {
+            @content;
+        }
+    }
+}
+@mixin bodyStyle {
+    background-color:$secondaryColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    margin:18px;
+
+    
+}
+@mixin boxStyle{
+    border-radius: 10px;
+    box-shadow: 0 4px 4px 0 rgb(172, 169, 169);
+    overflow: hidden;
+
+}
+@mixin linksHover{
+@include textStyles($textColor,18px ,bold );
+transition: all 0.3s ease-in;
+
+}

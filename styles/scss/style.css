@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #e7e2e2;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  background-color: #189494;
+}
+.header h1 {
+  color: #f3f2f2;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+}
+.navbar nav li {
+  padding-right: 20px;
+}
+.navbar nav a {
+  text-decoration: none;
+  color: #f3f2f2;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.navbar nav a:hover {
+  color: #1c032b;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease-in;
+}
+.navbar img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.hamburgerMenu {
+  display: none;
+  flex-direction: column;
+}
+.hamburgerMenu span {
+  width: 40px;
+  height: 5px;
+  color: blue;
+  background-color: #f3f2f2;
+  margin: 3px;
+  border-radius: 5px;
+}
+
+.main {
+  display: flex;
+  width: calc(100% - 3rem);
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+}
+.main aside {
+  flex-direction: column;
+  width: 24%;
+  background-color: #f3f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  margin: 18px;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 rgb(172, 169, 169);
+  overflow: hidden;
+}
+.main aside a {
+  width: 80%;
+  height: 110px;
+  background-color: #189494;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 rgb(172, 169, 169);
+  overflow: hidden;
+  text-align: center;
+  line-height: 110px;
+  margin: 15px 8px;
+  text-decoration: none;
+  color: #f3f2f2;
+  font-size: 18px;
+  font-weight: bold;
+}
+.main aside a:hover {
+  color: #1c032b;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease-in;
+}
+.main main {
+  width: 76%;
+  flex-direction: column;
+  background-color: #f3f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  margin: 18px;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 rgb(172, 169, 169);
+  overflow: hidden;
+}
+.main main img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 rgb(172, 169, 169);
+  overflow: hidden;
+}
+.main main h1 {
+  color: #189494;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 20px;
+}
+.main main h3 {
+  color: #1c032b;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.cards {
+  width: calc(100% - 6rem);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 30px;
+  margin: 0 auto;
+}
+
+.card {
+  height: 400px;
+  background-color: #f3f2f2;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 rgb(172, 169, 169);
+  overflow: hidden;
+}
+.card img {
+  width: 100%;
+  height: 50%;
+  border-radius: 0;
+}
+.card .cardContent {
+  padding: 20px;
+}
+.card .cardContent span {
+  display: inline-block;
+  padding: 5px;
+  color: #189494;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #189494;
+  display: flex;
+  padding: 15px;
+  margin-top: 40px;
+}
+footer .summary {
+  width: 50%;
+  padding: 10px;
+}
+footer .summary p {
+  color: rgb(228, 250, 249);
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.links {
+  padding: 10px;
+}
+.links ul {
+  list-style: none;
+}
+.links ul li {
+  padding: 4px;
+}
+.links ul li a {
+  text-decoration: none;
+  color: #f3f2f2;
+  font-size: 16px;
+  font-weight: bold;
+}
+.links ul li a:hover {
+  color: #1c032b;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease-in;
+}
+
+@media (max-width: 768px) {
+  .hamburgerMenu {
+    display: flex;
+  }
+  .navbar {
+    display: none;
+  }
+  .main {
+    flex-direction: column-reverse;
+  }
+  .main aside {
+    width: calc(100% - 6rem);
+  }
+  .main main {
+    width: calc(100% - 6rem);
+  }
+  .cards {
+    grid-template-columns: 1fr;
+    width: calc(100% - 9rem);
+  }
+  footer {
+    flex-direction: column;
+  }
+  footer .summary {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .main main {
+    width: 68%;
+  }
+  .main aside {
+    width: 32%;
+  }
+}/*# sourceMappingURL=style.css.map */

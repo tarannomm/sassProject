@@ -1,0 +1,235 @@
+@import "variables";
+@import "mixin";
+
+* {
+  @include firststyes;
+}
+
+body {
+  background-color: $bgcolor;
+  
+}
+//styles of header
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  background-color: $primaryColor;
+  h1 {
+    @include textStyles($secondaryColor, 1.5rem, bold);
+  }
+}
+//styles of navabr
+.navbar {
+  display: flex;
+  align-items: center;
+  nav {
+    ul {
+      list-style: none;
+      display: flex;
+    }
+    li {
+      padding-right: 20px;
+    }
+    a {
+      text-decoration: none;
+      @include textStyles($secondaryColor, 1.1rem, bold);
+      &:hover {
+         @include linksHover
+      }
+    }
+   
+  }
+   img {
+      @include imgStyles(70px, 70px, 50%);
+    }
+}
+//styles of hamburger menu in responsivee page
+.hamburgerMenu{
+    display:none;
+    flex-direction: column;
+    span{
+        width:40px;
+        height:5px;
+        color: blue;
+        background-color:$secondaryColor;
+        margin:3px;
+        border-radius:5px;
+    }
+    
+}
+
+//styles of coureses part
+.main{
+  display: flex;
+  width:calc(100% - 3rem);
+  align-items: center;
+  justify-content: center;
+  margin:20px auto;
+
+aside{
+    flex-direction: column;
+    width: 24%;
+    @include bodyStyle;
+    @include boxStyle;
+    a{
+      width:80%;
+      height:110px;
+      background-color: $primaryColor;
+      @include boxStyle;
+      text-align: center;
+      line-height: 110px;
+      margin: 15px 8px;
+      text-decoration: none;
+      @include textStyles($secondaryColor,18px,bold);
+      &:hover{
+        @include linksHover;
+      }
+     
+    }
+
+
+}
+main{
+     width: 76%;
+    flex-direction: column;
+     @include bodyStyle;
+     @include boxStyle;
+    img{
+        @include imgStyles(200px,200px,10px);
+        @include boxStyle;
+    }
+    h1{
+        @include textStyles($primaryColor,2rem,bold);
+        margin: 20px;
+    }
+    h3{
+        @include textStyles($textColor,1rem,bold)
+    }
+}
+
+}
+.cards{
+  width: calc(100% - 6rem);
+   display: grid;
+   grid-template-columns: repeat(4 , 1fr);
+   grid-template-rows: auto;
+   gap: 30px;
+   margin:0 auto;
+    
+
+}
+.card{
+  height: 400px;
+  background-color: $secondaryColor;
+   @include boxStyle;
+  img{
+    @include imgStyles(100%,50%,0)
+  }
+  .cardContent{
+     padding: 20px; 
+  span{
+    display: inline-block;
+    padding:5px;
+    @include textStyles($primaryColor,14px,bold);
+  
+  
+ 
+}}}
+footer{
+  background-color:$primaryColor;
+  display: flex;
+  padding: 15px;
+  margin-top: 40px;
+   
+.summary{
+  width: 50%;
+   padding: 10px;
+  p{
+    @include textStyles(rgb(228, 250, 249),15px,100)
+  }
+}
+
+
+}
+.links{
+  padding: 10px;
+  ul{
+    list-style: none;
+    li{
+     padding:4px;
+    a{
+      text-decoration: none;
+      @include textStyles($secondaryColor,16px,bold);
+      &:hover{
+        @include linksHover
+      }
+    }
+    }
+  }
+}
+
+ 
+ 
+@include media(M){
+  .hamburgerMenu
+  {
+      display: flex;
+  }
+  .navbar{
+    display: none;
+    // position: absolute;
+    // top:48px;
+    // right:0;
+    // flex-direction:column-reverse;
+    // background-color:$primaryColor;
+    // border-radius:0 0 10px 10px;
+    // overflow:hidden;
+    // display: none;
+    // nav ul{
+    //   flex-direction: column;
+    //   align-items: center;
+    //   margin-top: 10px;
+    //   li{
+    //     width: 100%;
+    //     padding:15px 40px;
+    //     &:hover{
+    //       background-color:rgb(23, 138, 132);
+    //     }
+    //   }
+    // }
+  }
+  .main{
+    flex-direction: column-reverse; 
+    aside{
+    width:calc(100% - 6rem)
+  }
+  main{
+    width: calc(100% - 6rem);
+  }
+  }
+  .cards{
+    grid-template-columns: 1fr;
+     width: calc(100% - 9rem);
+  }
+  footer{
+    flex-direction: column;
+    .summary{
+      width: 100%;
+    }
+  }
+ 
+}
+@include media(L){
+  .cards{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .main{
+  main{
+width: 68%;
+  }
+  aside{
+ width: 32%;
+  }}
+}
